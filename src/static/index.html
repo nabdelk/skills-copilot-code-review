@@ -27,6 +27,10 @@
           <div id="user-info" class="hidden">
             <span id="display-name"></span>
             <button id="logout-button">Logout</button>
+            <button id="manage-announcements-btn" class="icon-button" style="display:none; margin-left: 10px;">
+              <span class="announcement-icon">📢</span>
+              <span>Manage Announcements</span>
+            </button>
           </div>
         </div>
       </div>
@@ -134,6 +138,37 @@
           <button type="submit">Login</button>
         </form>
         <div id="login-message" class="hidden message"></div>
+      </div>
+    </div>
+
+    <!-- Announcement Management Modal -->
+    <div id="announcements-modal" class="modal hidden">
+      <div class="modal-content announcements-modal-content">
+        <span class="close-announcements-modal">&times;</span>
+        <h3>Manage Announcements</h3>
+        <div id="announcements-list"></div>
+        <button id="add-announcement-btn" class="primary-btn">Add Announcement</button>
+        <form id="announcement-form" class="hidden">
+          <input type="hidden" id="announcement-id" />
+          <div class="form-group">
+            <label for="announcement-title">Title:</label>
+            <input type="text" id="announcement-title" required />
+          </div>
+          <div class="form-group">
+            <label for="announcement-message">Message:</label>
+            <textarea id="announcement-message" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="announcement-start-date">Start Date (optional):</label>
+            <input type="datetime-local" id="announcement-start-date" />
+          </div>
+          <div class="form-group">
+            <label for="announcement-expiration-date">Expiration Date:</label>
+            <input type="datetime-local" id="announcement-expiration-date" required />
+          </div>
+          <button type="submit" class="primary-btn">Save</button>
+          <button type="button" id="cancel-announcement-btn">Cancel</button>
+        </form>
       </div>
     </div>
 

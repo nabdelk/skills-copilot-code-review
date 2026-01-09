@@ -1,3 +1,14 @@
+from fastapi import Depends, Request
+
+def get_current_user(request: Request):
+    # Simple session check: username in query or header (à adapter selon frontend)
+    username = request.headers.get("X-Username") or request.query_params.get("username")
+    if not username:
+        raise HTTPException(status_code=401, detail="Not authenticated")
+    teacher = teachers_collection.find_one({"_id": username})
+    if not teacher:
+        raise HTTPException(status_code=401, detail="Invalid user")
+    return teacher
 """
 Authentication endpoints for the High School Management System API
 """

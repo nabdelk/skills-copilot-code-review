@@ -1,3 +1,157 @@
+#announcements-modal .announcements-modal-content {
+  animation: modalFadeIn 0.3s;
+}
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.announcement-item strong {
+  font-size: 1.08em;
+  color: var(--primary-dark);
+}
+.announcement-item .announcement-actions button {
+  outline: none;
+}
+.announcement-item .announcement-actions button:focus {
+  box-shadow: 0 0 0 2px var(--primary-light);
+}
+#announcement-form input:invalid, #announcement-form textarea:invalid {
+  border-color: var(--error);
+}
+#announcement-form input:focus, #announcement-form textarea:focus {
+  border-color: var(--primary-light);
+  outline: none;
+}
+#announcements-list .message.success {
+  background: var(--success-light);
+  color: var(--success);
+  border-radius: 4px;
+  padding: 6px 10px;
+  margin-bottom: 8px;
+}
+#announcements-list .message.error {
+  background: var(--error-light);
+  color: var(--error);
+  border-radius: 4px;
+  padding: 6px 10px;
+  margin-bottom: 8px;
+}
+/* Announcement Management Modal */
+#announcements-modal .announcements-modal-content {
+  max-width: 500px;
+  width: 95%;
+  padding: 24px 20px 20px 20px;
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 6px 32px rgba(0,0,0,0.18);
+  position: relative;
+}
+#announcements-modal h3 {
+  color: var(--primary);
+  margin-bottom: 18px;
+  text-align: center;
+}
+#announcements-list {
+  margin-bottom: 18px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+.announcement-item {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+}
+.announcement-item .announcement-actions {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  display: flex;
+  gap: 6px;
+}
+.announcement-item .edit-btn,
+.announcement-item .delete-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  font-size: 1.1em;
+  padding: 2px 6px;
+  border-radius: 3px;
+  transition: background 0.2s;
+}
+.announcement-item .delete-btn {
+  color: var(--error);
+}
+.announcement-item .edit-btn:hover {
+  background: var(--primary-light);
+  color: #fff;
+}
+.announcement-item .delete-btn:hover {
+  background: var(--error-light);
+  color: var(--error);
+}
+#announcement-form {
+  margin-top: 10px;
+  background: var(--background);
+  border-radius: 6px;
+  padding: 12px 10px 10px 10px;
+  border: 1px solid var(--border);
+}
+#announcement-form .form-group {
+  margin-bottom: 10px;
+}
+#announcement-form label {
+  font-size: 0.95em;
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+  display: block;
+}
+#announcement-form input,
+#announcement-form textarea {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 1em;
+  margin-top: 2px;
+}
+#announcement-form textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+#announcement-form button.primary-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 7px 18px;
+  border-radius: 4px;
+  margin-right: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.2s;
+}
+#announcement-form button.primary-btn:hover {
+  background: var(--primary-dark);
+}
+#announcement-form #cancel-announcement-btn {
+  background: var(--border);
+  color: var(--text-secondary);
+  border: none;
+  padding: 7px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.2s;
+}
+#announcement-form #cancel-announcement-btn:hover {
+  background: var(--border-focus);
+}
 /* Color palette */
 :root {
   /* Primary colors */
